@@ -6,37 +6,27 @@ import { ServicesComponent } from './components/services/services.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { CertificationsComponent } from './components/certifications/certifications.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContatoComponent } from './components/contato/contato.component';
-import { RouterOutlet, provideRouter } from '@angular/router';
-
-const routes = [
-  { path: '', component: HeroComponent },
-  { path: 'contato', component: ContatoComponent },
-  // Outras rotas podem ser adicionadas aqui
-];
+import { SocialFloatComponent } from './components/social-float/social-float.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-main-page',
   standalone: true,
   imports: [
     CommonModule,
     HeaderComponent,
-    RouterOutlet,
-    FooterComponent
-],
+    HeroComponent,
+    ServicesComponent,
+    TechnologiesComponent,
+    // CertificationsComponent,
+    SocialFloatComponent
+  ],
   template: `
-    <main>
-      <app-header></app-header>
-      <router-outlet></router-outlet>
-      <app-footer></app-footer>
-    </main>
-  `,
-  styles: [`
-    main {
-      min-height: 100vh;
-    }
-  `]
+    <app-header></app-header>
+    <app-hero></app-hero>
+    <app-services></app-services>
+    <app-technologies></app-technologies>
+    <!-- <app-certifications></app-certifications> -->
+    <app-social-float></app-social-float>
+  `
 })
-export class AppComponent {
-  title = 'Champiao Cloud Solutions - Soluções em DevOps e Desenvolvimento';
-}
+export class MainPageComponent {} 

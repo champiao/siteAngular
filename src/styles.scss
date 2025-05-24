@@ -1,1 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Variáveis de cores e estilos globais */
+:root {
+  --primary-bg: #000000;
+  --neon-blue: #00f3ff;
+  --neon-blue-glow: rgba(0, 243, 255, 0.5);
+  --text-white: #ffffff;
+  --text-gray: #a0a0a0;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --transition-speed: 0.3s;
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-white);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animações globais */
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 5px var(--neon-blue-glow),
+                0 0 10px var(--neon-blue-glow),
+                0 0 15px var(--neon-blue-glow);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--neon-blue-glow),
+                0 0 20px var(--neon-blue-glow),
+                0 0 30px var(--neon-blue-glow);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--neon-blue-glow),
+                0 0 10px var(--neon-blue-glow),
+                0 0 15px var(--neon-blue-glow);
+  }
+}
+
+/* Classes utilitárias */
+.neon-text {
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue-glow);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform var(--transition-speed);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue-glow);
+}
