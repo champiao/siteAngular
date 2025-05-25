@@ -1,0 +1,11 @@
+services:
+  app:
+    image: champiao/teste:siteAngular
+    ports:
+      - 127.0.0.1:4200:4200
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # volumes:
+    #   - .:/app
+    working_dir: /app

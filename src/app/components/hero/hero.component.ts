@@ -19,16 +19,16 @@ import { CommonModule } from '@angular/common';
               de DevOps.
             </p>
             <div class="cta-buttons">
-              <a href="/contato" class="cta-primary">Vamos Conversar</a>
+              <a href="/" class="cta-primary">Vamos Conversar</a>
               <a href="#services" class="cta-secondary">Nossos Serviços</a>
             </div>
           </div>
           <div class="hero-image">
             <!-- Aqui você pode adicionar uma imagem ilustrativa -->
             <div class="image-placeholder">
-              <div class="neon-border">
-                <img src="assets/champiaoLogo.png" alt="Hero Image" class="hero-image-img">
-              </div>
+              <!-- <div class="neon-border"> -->
+                <img src="assets/semfundoChampiaoLogo.png" alt="Hero Image" class="hero-image-img">
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -50,6 +50,7 @@ import { CommonModule } from '@angular/common';
     .hero-image-img {
       width: 100%;
       height: 100%;
+      background-color: var(--primary-bg);
       border-radius: 20px;
       box-shadow: 0 0 20px var(--neon-blue-glow);
       object-fit: contain;
@@ -150,6 +151,7 @@ import { CommonModule } from '@angular/common';
       position: absolute;
       inset: 0;
       z-index: 1;
+      background-color: var(--primary-bg);
     }
 
     .grid-overlay {

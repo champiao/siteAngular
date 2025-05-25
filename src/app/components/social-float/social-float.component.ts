@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-social-float',
   standalone: true,
-  imports: [CommonModule],
   template: `
     <div class="social-float">
       <a href="https://wa.me/+5512988844068" target="_blank" class="social-btn whatsapp" aria-label="WhatsApp">
@@ -87,4 +85,4 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class SocialFloatComponent {} 
+export class SocialFloatComponent {}

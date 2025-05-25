@@ -1,42 +1,21 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { ServicesComponent } from './components/services/services.component';
-import { TechnologiesComponent } from './components/technologies/technologies.component';
-import { CertificationsComponent } from './components/certifications/certifications.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContatoComponent } from './components/contato/contato.component';
-import { RouterOutlet, provideRouter } from '@angular/router';
-
-const routes = [
-  { path: '', component: HeroComponent },
-  { path: 'contato', component: ContatoComponent },
-  // Outras rotas podem ser adicionadas aqui
-];
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
-    HeaderComponent,
     RouterOutlet,
-    FooterComponent
-],
-  template: `
-    <main>
-      <app-header></app-header>
-      <router-outlet></router-outlet>
-      <app-footer></app-footer>
-    </main>
-  `,
-  styles: [`
-    main {
-      min-height: 100vh;
-    }
-  `]
+    HeaderComponent,
+    FooterComponent,
+    ChatbotComponent
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Champiao Cloud Solutions - Soluções em DevOps e Desenvolvimento';
+  title = 'champiao-angular-site';
 }

@@ -7,6 +7,7 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
 import { CertificationsComponent } from './components/certifications/certifications.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SocialFloatComponent } from './components/social-float/social-float.component';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 @Component({
   selector: 'app-main-page',
@@ -18,7 +19,9 @@ import { SocialFloatComponent } from './components/social-float/social-float.com
     ServicesComponent,
     TechnologiesComponent,
     // CertificationsComponent,
-    SocialFloatComponent
+    // SocialFloatComponent,
+    FooterComponent,
+    ChatbotComponent
   ],
   template: `
     <app-header></app-header>
@@ -26,7 +29,9 @@ import { SocialFloatComponent } from './components/social-float/social-float.com
     <app-services></app-services>
     <app-technologies></app-technologies>
     <!-- <app-certifications></app-certifications> -->
-    <app-social-float></app-social-float>
+    <!-- <app-social-float></app-social-float> -->
+    <app-chatbot></app-chatbot>
+    <app-footer></app-footer>
   `
 })
 export class MainPageComponent {} 
