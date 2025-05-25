@@ -1,6 +1,6 @@
 import { Component, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -37,9 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             <a href="#" class="logo neon-text" style="text-decoration: none;"><img src="assets/semfundoChampiaoLogo.png" alt="CCS" class="logo-img-mini"></a>
           </div>
           <div class="desktop-menu">
-            <button mat-button class="menu-item" [routerLink]="['/']" fragment="home">Home</button>
-            <button mat-button class="menu-item" [routerLink]="['/']" fragment="services">Serviços</button>
-            <button mat-button class="menu-item" [routerLink]="['/']" fragment="technologies">Tecnologias</button>
+            <button mat-button class="menu-item" (click)="scrollToSection('home')">Home</button>
+            <button mat-button class="menu-item" (click)="scrollToSection('services')">Serviços</button>
+            <button mat-button class="menu-item" (click)="scrollToSection('technologies')">Tecnologias</button>
           </div>
           <button mat-icon-button class="mobile-menu-button" *ngIf="!menuOpen" (click)="toggleMenu()">
             <mat-icon>menu</mat-icon>
@@ -51,9 +51,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       </div>
       <div *ngIf="menuOpen" [@dropdownMenu]="menuOpen ? 'open' : 'closed'" class="mobile-dropdown-menu">
         <div class="mobile-nav-list">
-          <a class="mobile-menu-item" [routerLink]="['/']" fragment="home" (click)="closeMenu()">Home</a>
-          <a class="mobile-menu-item" [routerLink]="['/']" fragment="services" (click)="closeMenu()">Serviços</a>
-          <a class="mobile-menu-item" [routerLink]="['/']" fragment="technologies" (click)="closeMenu()">Tecnologias</a>
+          <a class="mobile-menu-item" (click)="scrollToSection('home', true)">Home</a>
+          <a class="mobile-menu-item" (click)="scrollToSection('services', true)">Serviços</a>
+          <a class="mobile-menu-item" (click)="scrollToSection('technologies', true)">Tecnologias</a>
         </div>
       </div>
       <div *ngIf="menuOpen" class="mobile-menu-overlay" (click)="closeMenu()"></div>
@@ -248,10 +248,24 @@ export class HeaderComponent {
   menuOpen = false;
   @ViewChild('sidenav') sidenav: any;
 
+  constructor(private router: Router) {}
+
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
   closeMenu() {
     this.menuOpen = false;
+  }
+
+  scrollToSection(fragment: string, closeMenu: boolean = false) {
+    this.router.navigate(['/'], { fragment }).then(() => {
+      const el = document.getElementById(fragment);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (closeMenu) {
+        this.closeMenu();
+      }
+    });
   }
 }
