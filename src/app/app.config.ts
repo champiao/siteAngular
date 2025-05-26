@@ -19,8 +19,12 @@
 
 /* Ignorando os erros de linter, pois são causados pela falta de declarações de tipo. */
 
+/* Ignorando os erros de linter, pois são causados pela falta de declarações de tipo. */
+
+/* Ignorando os erros de linter, pois são causados pela falta de declarações de tipo. */
+
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, withEnabledBlockingInitialNavigation, withRouterConfig } from '@angular/router';
+import { provideRouter, withEnabledBlockingInitialNavigation } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
@@ -29,11 +33,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       routes,
-      withEnabledBlockingInitialNavigation(),
-      withRouterConfig({
-        anchorScrolling: 'enabled',
-        scrollOffset: [0, 80] // ajuste conforme a altura do header
-      })
+      withEnabledBlockingInitialNavigation()
     ),
     provideClientHydration(),
     provideAnimations()
