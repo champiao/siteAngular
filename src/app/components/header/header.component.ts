@@ -13,7 +13,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink,
+    //RouterLink,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
