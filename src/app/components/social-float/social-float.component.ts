@@ -14,6 +14,9 @@ import { Component } from '@angular/core';
       <a href="https://linkedin.com/in/champiao" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
+      <a href="https://www.buymeacoffee.com/champiao" target="_blank" class="social-btn buymeacoffee" aria-label="Buy Me a Coffee">
+        <i class="fas fa-coffee"></i>
+      </a>
     </div>
   `,
   styles: [`
@@ -71,6 +74,16 @@ import { Component } from '@angular/core';
       background: #0a66c2;
       color: var(--primary-bg);
       box-shadow: 0 0 32px 6px #0a66c299;
+    }
+    .social-btn.buymeacoffee {
+      color: #ff813f;
+      border-color: #ff813f;
+      box-shadow: 0 0 18px 2px #ff813f55;
+    }
+    .social-btn.buymeacoffee:hover {
+      background: #ff813f;
+      color: var(--primary-bg);
+      box-shadow: 0 0 32px 6px #ff813f99;
     }
     @media (max-width: 600px) {
       .social-float {
