@@ -224,7 +224,7 @@ export class ChatbotComponent {
     this.loading = true;
 
     try {
-      const response = await fetch('https://champiao.com.br/api/chat', {
+      const response = await fetch('http://localhost:4242/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

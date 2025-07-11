@@ -33,18 +33,18 @@ body {
 @keyframes neonGlow {
   0% {
     box-shadow: 0 0 5px var(--neon-blue-glow),
-                0 0 10px var(--neon-blue-glow),
-                0 0 15px var(--neon-blue-glow);
+    0 0 10px var(--neon-blue-glow),
+    0 0 15px var(--neon-blue-glow);
   }
   50% {
     box-shadow: 0 0 10px var(--neon-blue-glow),
-                0 0 20px var(--neon-blue-glow),
-                0 0 30px var(--neon-blue-glow);
+    0 0 20px var(--neon-blue-glow),
+    0 0 30px var(--neon-blue-glow);
   }
   100% {
     box-shadow: 0 0 5px var(--neon-blue-glow),
-                0 0 10px var(--neon-blue-glow),
-                0 0 15px var(--neon-blue-glow);
+    0 0 10px var(--neon-blue-glow),
+    0 0 15px var(--neon-blue-glow);
   }
 }
 
@@ -95,32 +95,35 @@ body {
   background: var(--neon-blue-glow);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+/* Angular Material Configuration */
 @include mat.core();
 
-$primary-palette: mat.define-palette(mat.$purple-palette);
-$accent-palette: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$warn-palette: mat.define-palette(mat.$red-palette);
-
-$theme: mat.define-light-theme((
+// Define M3 theme
+$theme: mat.define-theme((
   color: (
-    primary: $primary-palette,
-    accent: $accent-palette,
-    warn: $warn-palette,
+    theme-type: light,
+    primary: mat.$violet-palette,
+    tertiary: mat.$cyan-palette,
   ),
-  typography: mat.define-typography-config(),
-  density: 0,
+  typography: (
+    brand-family: 'Roboto',
+    bold-weight: 500
+  ),
+  density: (
+    scale: 0
+  )
 ));
 
-@include mat.all-component-themes($theme);
+// Apply M3 theme - MUST be wrapped in a selector for M3 themes
+html {
+  @include mat.all-component-themes($theme);
+}
 
+/* Base styles */
 html, body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #fafafa;
 }
 
 * {

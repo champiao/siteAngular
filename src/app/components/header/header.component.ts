@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-header',
@@ -34,7 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       <div class="container">
         <nav class="nav">
           <div class="logo-area">
-            <a href="#" class="logo neon-text" style="text-decoration: none;"><img src="assets/semfundoChampiaoLogo.png" alt="CCS" class="logo-img-mini"></a>
+            <a routerLink="#" class="logo neon-text" style="text-decoration: none;"><img src="assets/semfundoChampiaoLogo.png" alt="CCS" class="logo-img-mini"></a>
           </div>
           <div class="desktop-menu">
             <button mat-button class="menu-item" (click)="scrollToSection('home')">Home</button>
