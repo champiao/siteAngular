@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
               de DevOps.
             </p>
             <div class="cta-buttons">
-              <a href="/" class="cta-primary">Vamos Conversar</a>
+              <a href="https://wa.me/5512988844068" class="cta-primary">Vamos Conversar</a>
               <a href="#services" class="cta-secondary">Nossos Serviços</a>
             </div>
           </div>
