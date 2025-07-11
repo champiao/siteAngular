@@ -34,7 +34,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       <div class="container">
         <nav class="nav">
           <div class="logo-area">
-            <a routerLink="#" class="logo neon-text" style="text-decoration: none;"><img src="assets/semfundoChampiaoLogo.png" alt="CCS" class="logo-img-mini"></a>
+            <a href="/" class="logo neon-text" style="text-decoration: none;"><img src="assets/semfundoChampiaoLogo.png" alt="CCS" class="logo-img-mini"></a>
           </div>
           <div class="desktop-menu">
             <button mat-button class="menu-item" (click)="scrollToSection('home')">Home</button>
