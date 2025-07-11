@@ -28,7 +28,7 @@ import { SocialFloatComponent } from './components/social-float/social-float.com
     <app-hero></app-hero>
     <app-services></app-services>
     <app-technologies></app-technologies>
-    <app-certifications></app-certifications>
+    <!-- <app-certifications></app-certifications> -->
     <app-social-float></app-social-float>
     <!-- <app-chatbot></app-chatbot> -->
     <app-footer></app-footer>
