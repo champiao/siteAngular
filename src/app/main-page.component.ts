@@ -18,7 +18,7 @@ import { SocialFloatComponent } from './components/social-float/social-float.com
     HeroComponent,
     ServicesComponent,
     TechnologiesComponent,
-    CertificationsComponent,
+    // CertificationsComponent,
     SocialFloatComponent,
     FooterComponent,
    // ChatbotComponent
